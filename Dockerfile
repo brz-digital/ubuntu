@@ -12,14 +12,16 @@ RUN usermod -u 1000 www-data
 RUN apt-get install -y \
     python-software-properties \
     software-properties-common \
-    wget
+    wget \
+    locales
 
 # Genereating locales
 RUN locale-gen en_US.UTF-8 \
     && locale-gen pt_BR.UTF-8
 
 # Update repositories
-RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
+RUN update-locale LC_ALL=en_US.UTF-8
+RUN add-apt-repository ppa:ondrej/php
 RUN apt-get update -y && apt-get upgrade -y
 
 # Install wkhtmltopdf
