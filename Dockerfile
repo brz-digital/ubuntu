@@ -15,11 +15,9 @@ RUN apt-get install -y \
     wget
 
 # Genereating locales
-RUN locale -a \
-    && locale-gen en_US.UTF-8 \
-    && locale-gen es_ES.UTF-8 \
-    && locale-gen pt_BR.UTF-8
-
+RUN locale-gen en_US.UTF-8
+RUN locale-gen es_ES.UTF-8
+RUN locale-gen pt_BR.UTF-8
 RUN dpkg-reconfigure locales
 
 # Update repositories
