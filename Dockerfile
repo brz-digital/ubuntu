@@ -35,3 +35,6 @@ WORKDIR /wkhtmltox/bin/
 RUN mv wkhtmltopdf /usr/bin/wkhtmltopdf
 RUN mv wkhtmltoimage /usr/bin/wkhtmltoimage
 RUN rm -rf wkhtmltox
+
+# Return workdir
+WORKDIR /
