@@ -20,7 +20,6 @@ RUN locale-gen en_US.UTF-8 \
     && locale-gen pt_BR.UTF-8
 
 # Update repositories
-RUN update-locale LC_ALL=en_US.UTF-8
 RUN add-apt-repository ppa:ondrej/php
 RUN apt-get update -y && apt-get upgrade -y
 
