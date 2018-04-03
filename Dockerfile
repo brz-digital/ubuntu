@@ -16,10 +16,10 @@ RUN apt-get install -y \
     locales
 
 # Genereating locales
-RUN locale-gen en_US.UTF-8
-RUN locale-gen es_ES.UTF-8
-RUN locale-gen pt_BR.UTF-8
-RUN dpkg-reconfigure locales
+# RUN locale-gen en_US.UTF-8
+# RUN locale-gen es_ES.UTF-8
+# RUN locale-gen pt_BR.UTF-8
+# RUN dpkg-reconfigure locales
 
 # Update repositories
 RUN LC_ALL=pt_BR.UTF-8 add-apt-repository ppa:ondrej/php
