@@ -20,9 +20,10 @@ RUN apt-get install -y \
 # RUN locale-gen es_ES.UTF-8
 # RUN locale-gen pt_BR.UTF-8
 # RUN dpkg-reconfigure locales
+# RUN LC_ALL=pt_BR.UTF-8
 
 # Update repositories
-RUN LC_ALL=pt_BR.UTF-8 add-apt-repository ppa:ondrej/php
+RUN add-apt-repository ppa:ondrej/php
 RUN apt-get update -y && apt-get upgrade -y
 
 # Install wkhtmltopdf
