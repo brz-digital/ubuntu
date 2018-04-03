@@ -30,6 +30,7 @@ RUN apt-get update -y && apt-get upgrade -y
 
 # Install wkhtmltopdf
 RUN apt-get install -y fontconfig libxrender1 xfonts-base xfonts-75dpi libjpeg-turbo8 libxext6
-RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-    tar vxf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+RUN wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb \
+    && dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
+
 RUN ln -s /usr/local/bin/wkhtmltopdf /usr/bin/wkhtmltopdf
