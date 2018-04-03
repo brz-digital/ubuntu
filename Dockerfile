@@ -1,6 +1,6 @@
-FROM ubuntu:bionic
+FROM ubuntu:xenial
 
-MAINTAINER "Hugo Fabricio" <hugo@brzdigital.com.br>
+MAINTAINER "Joao Paulo Barbosa" <jpaulobneto@gmail.com>
 
 # Update sources list
 RUN apt-get update -y && apt-get upgrade -y
@@ -12,20 +12,14 @@ RUN usermod -u 1000 www-data
 RUN apt-get install -y \
     python-software-properties \
     software-properties-common \
-    wget \
-    locales
+    wget
 
 # Genereating locales
 RUN locale-gen en_US.UTF-8 \
-    locale-gen pt_BR.UTF-8 \
-    locale-gen es_ES.UTF-8 \
-    dpkg-reconfigure locales
-
-# Define default locale
-RUN update-locale LANG=pt_BR.UTF-8
+    && locale-gen pt_BR.UTF-8
 
 # Update repositories
-RUN add-apt-repository ppa:ondrej/php
+RUN LC_ALL=pt_BR.UTF-8 add-apt-repository ppa:ondrej/php
 RUN apt-get update -y && apt-get upgrade -y
 
 # Install wkhtmltopdf
