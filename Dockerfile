@@ -12,8 +12,7 @@ RUN usermod -u 1000 www-data
 RUN apt-get install -y \
     python-software-properties \
     software-properties-common \
-    wget \
-    apt-transport-https
+    wget
 
 # Genereating locales
 RUN locale-gen en_US.UTF-8 \
